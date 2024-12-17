@@ -1,13 +1,14 @@
 
 import cv2
 from ultralytics import YOLO
+import time
 
 cap = cv2.VideoCapture(0)
 cap.set(3, 960)  
 cap.set(4, 720) 
 
-#model = YOLO(r'C:\Users\ERICF\OneDrive - Instituto Tecnologico y de Estudios Superiores de Monterrey\Tecnologico de Monterrey\BASES DE DATOS\Python\Model\models\modelo4.pt')
-model = YOLO("modelo4.pt")
+model = YOLO(r'C:\Users\ERICF\Documents\Base_de_datos\Python\Model\models\modelo4.pt')
+
 while True:
     ret, frame = cap.read()
 
@@ -35,6 +36,8 @@ while True:
     t = cv2.waitKey(5)
     if t == 27:
         break
+    
+    time.sleep(0.05)
 
 cap.release()
 cv2.destroyAllWindows()
