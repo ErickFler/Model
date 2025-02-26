@@ -1,13 +1,15 @@
-
+#Importamos librerias
 import cv2
 from ultralytics import YOLO
 import time
 
+#Ejecutamos el modelo y dimensionamos el tamaño de la pestaña que se mostrara
 cap = cv2.VideoCapture(0)
 cap.set(3, 960)  
 cap.set(4, 720) 
 
-model = YOLO(r'C:\Users\ERICF\Documents\Base_de_datos\Python\Model\models\modelo4.pt')
+#Ponemos la ruta dek modelo
+model = YOLO(r'ruta/al/modelo/')
 
 while True:
     ret, frame = cap.read()
